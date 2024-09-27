@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+</head>
+<body>
+    <p id="total"></p>
+    <p id="marks"></p>
+    <p id="result"></p>
+    <script>
+        // var score=[50,60,70,30,45,34,23,44];
+        // for(var i=0; i<score.length; i++) {
+        //     document.write(score[i]);
+        // } 
+        //count how many students pass
+        var student=[60,70,50,40,30,44,70,56,87];
+        let count=0;
+        for(var i=0; i<student.length; i++) {
+            if(student[i]>=50) {
+                count=count+1;
+            }
+        }
+        //how to print topper's score
+        document.getElementById("result").innerHTML="MINIMUM MARKS: "+count;
+        var score=[90,100,20,40,50,67,89,57,87];
+        let topper = Math.max(...score);
+        document.getElementById("marks").innerHTML="toppers score: " + topper;
+        //create sal array and print grand total of all employee
+        var sal=[100,200,300,400,500];
+        let sum = 0;
+        for(let i=0; i<sal.length; i++) {
+            sum= sum+sal[i];
+        }
+        document.getElementById("total").innerHTML="Grand Total: "+sum;
+        //print only odd location elements
+        var odd = [10,20,30,40,50,60,70,80,90,100];
+        for(let i=1; i<=odd.length; i+2){
+            document.write(odd[i]+"<br>")
+        };
+        //create array using purchase-sale sequence and show each transaction in profit or loss
+        let transaction = [
+            {purchase: 100, sale: 150},
+            {purchase: 200, sale: 180},
+            {purchase: 300, sale: 130},
+            {purchase: 50, sale: 70}
+        ];
+        for(let i=0; i<transaction.length; i++) {
+            let purchase = transaction[i].purchase;
+            let sale = transaction[i].sale;
+            if(sale>purchase) {
+                document.write(`Transaction ${i + 1} : Profit of ${sale - purchase}<br>`);
+            }
+            else if(purchase>sale) {
+                document.write(`Transaction ${i + 1} : Loss of ${purchase - sale}<br>`);
+            }
+            else {
+                document.write(" no profit no loss");
+            }
+        };
+        //multiply by two 
+        var a=[10,20,30,40,50];
+        var b=[2,3,4,5,3];
+        let y=4;
+        for(x=0; x<5; x++) {
+            document.write(a[x]*b[y--]);
+        }
+        //sum of both array
+        let z=[10,20,30,40,50];
+        let k=[10,20,30,40,50];
+        let c=[];
+        for(let i=0; i<5; i++) {
+            for(let j=0; j<i; j++) {
+                c[i]=z[i]+k[j];
+                document.write(c[i] + "<br>");
+            }
+        }
+    </script>
+</body>
+</html>
